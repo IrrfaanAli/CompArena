@@ -23,3 +23,52 @@ text-align: center;
    color: rgb(38, 155, 213);
    margin-bottom: 30px;
 }
+.input-box
+{
+    border-radius: 20px;
+    padding:10px;
+    margin:20px 0;
+    width:90%;
+    border: 1px solid #999;
+    outline:none;   
+}
+.input
+{
+    
+    border-radius: 20px;
+    padding:10px;
+    margin:20px 0;
+    width:30%;
+    border: 1px solid #999;
+    outline:none;
+
+}
+
+button
+{
+    color:#fff;
+    width:100%;
+    padding:10px;
+    border-radius:20px;
+    font-size: 15px;
+    margin: 10px 0;
+    border:none;
+    outline:none;
+    cursor:pointer;
+}
+.signup-btn
+{
+    background-color: rgb(38, 155, 213);
+}
+a
+{
+    text-decoration: none;
+
+}
+img
+{
+    width: 150px;
+    margin-top: -50px;
+    
+    
+}
