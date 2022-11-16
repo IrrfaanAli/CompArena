@@ -1,2 +1,2 @@
-﻿# CampArena
+﻿# Software Engineering Lab
  
