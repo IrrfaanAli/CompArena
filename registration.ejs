@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/s.css">
+    <title>Registration</title>
+</head>
+<body>
+    <div class="sign-up-form">
+        <img src="img/user-icon.png">
+        <h1>Registration</h1>
+        <form action="/registration" method="post">
+            <input type="name" name="name" class="input-box" placeholder="Name">
+            <input type="email" name="email" class="input-box" placeholder="Email">
+            <input type="password" name="password" class="input-box" placeholder="Password">
+            
+            <select name ="user_type" class="input"  name="user_type">
+            <option value="">Select</option>
+             <option value="host">Host</option>
+              <option value="participant">Participant</option>
+               </select>  
+        <select name ="region" class="input"  name="region" >
+                <option value="">Region</option>
+                 <option value="dhaka">Dhaka</option>
+                  <option value="rajshahi">Rajshahi</option>
+                  <option value="dinajpur">Dinajpur</option>
+                  <option value="barishal">Barishal</option>
+                   </select> 
+                   <select name ="interest" class="input"  name="interest" >
+                    <option value="">Interest</option>
+                     <option value="math">Math</option>
+                      <option value="science">Science</option>
+                      <option value="physics">Physics</option>
+                      <option value="literature">Literature</option>
+                      <option value="programming">Programming</option>
+                       </select>  <br><br>
+            
+            <br>
+            <button type="button" class="signup-btn">Sign Up</button>
+            <p> Do you have an account? <a href="/signin">Sign In</a></p>
+        </form>
+        </div>
+    </body>
+    </html>
