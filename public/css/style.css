@@ -1,0 +1,42 @@
+.div1 {
+    padding: 5px;
+    padding-top: pt;
+    padding-bottom: pb;
+    padding-left: pl;
+    padding-right: pr;
+}
+
+.div2 {
+    margin: 10px;
+    margin-top: mt;
+    margin-left: ml;
+}
+
+.btn0 {
+    background-color: #337AB7;
+    color: white;
+    height: 37px;
+    width: 130px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0.5% 0 0 89%;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn0:hover {
+    background-color: #43ace4;
+}
+
+.textarea1 {
+    margin: 1% 0 0 0;
+    width: 1155px;
+}
+
+.t1 {
+    width: 30%;
+    margin: 3% 0 0 3%;
+}
