@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>   <meta charset="UTF-8" />
+  <meta http-equiv="X-UV-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="./styles/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:wght@600&display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>A2Z</title></head>
+<body style="background-color: #9ae5ff">
+    <form style="max-width: 500px; margin: 0 auto" action="" method="POST">
+        <div class="ui form">
+          <div class="field w-96 pl-10 pt-10">
+            <label>Product Name</label>
+            <input type="text" name="Product_Name" value="<%= product[0].Product_Name %>" placeholder="Product Name" />
+          </div>
+  
+          <div class="field w-96 pl-10 pt-3">
+            <label>Price</label>
+            <input type="number" name="Price" value="<%= product[0].Price %>" placeholder="Price" />
+          </div>
+  
+          <div class="field w-96 pl-10 pt-3">
+            <label>Type</label>
+            <input type="text" name="Type" value="<%= product[0].Type %>" placeholder="Product Type" />
+          </div>
+  
+          <div class="field w-96 pl-10 pt-3">
+            <label>Details</label>
+            <input type="text" name="Details" value="<%= product[0].Details %>" placeholder="Product Details" />
+          </div>
+          <div class="field w-96 pl-10 pt-3">
+            <label>Image</label>
+            <input type="text" name="image" value="<%= product[0].image %>" placeholder="Image file name" />
+          </div>
+          <div class="field w-96 pl-10 pt-3">
+            <label>Availability</label>
+            <input
+              type="text"
+              name="Availability"
+              value="<%= product[0].Availability %>"
+              placeholder="Product Availability"
+            />
+          </div>
+
+          <div class="field w-96 pl-10 pt-3">
+            <label>Status</label>
+            <input
+              type="text"
+              name="Status"
+              value="<%= product[0].Status %>"
+              placeholder="Status"
+            />
+          </div>
+  
+          <button class="ui blue button" type="submit" value="Submit" style="margin: 10px 0 0 247px">Update</button>
+        </div>
+      </form>
+</body>
+</html>

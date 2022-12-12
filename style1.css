@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.salam{
+    align-items: center;
+    box-sizing: content-box;
+    border: 5rem;
+    border-color: black;
+}
+
+body {
+    height: 150vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:whitesmoke;
+    font-size:large;
+}
+
+.create_event_ {
+    width: 100%;
+    height:max-content;
+    padding: 100px;
+    border-radius: 5px;
+    background: #ffffff;
+    margin-top:-2%;
+}
+
+
+.create_event_ .form {
+    font-size:medium;
+    padding: auto;
+}
+
+.create_event_ form .form-group {
+    margin-bottom: 12px;
+}
+
+.create_event_ form input[type="submit"] {
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.needs-validation{
+    margin: 10px;
+    background-color:#ffffff;
+}
+
+
