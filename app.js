@@ -1,19 +1,12 @@
 const express=require('express');
-const mongoos=require('mongoose');
-const bodyPasrser=require('body-parser');
+const bodyParser=require('body-parser');
+const mongoose=require('mongoose');
+
 const app=express();
 const homeRoutes=require('./routers/home');
 const port = process.env.port || 8000;
 
-mongoos.connect("mongodb://127.0.0.1:27017/cmp",{useNewUrlParser:true})
-const db=mongoos.connection;
-db.on('eror',()=>{
-    console.log("Err is");
-})
 
-db.once('open',()=>{
-    console.log("DB is Connected");
-});
 
 // app.get('/',(req,res)=>{
 //     res.send("Hello");
@@ -22,10 +15,18 @@ db.once('open',()=>{
 app.set('view engine','ejs');
 app.use(express.static('public')); 
 
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
+
+// app.use(function (req, res) {
+//     res.setHeader('Content-Type', 'text/plain')
+//     res.write('you posted:\n')
+//     res.end(JSON.stringify(req.body, null, 2))
+//   })
+
 app.use('/' , homeRoutes);
 
-app.use(express.urlencoded({extended:true}));
-app.use(express.json());
+
 
 
 app.listen(port); 
