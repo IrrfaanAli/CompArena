@@ -6,19 +6,25 @@ const bodyParser=require('body-parser');
 
 
 //Home page route
-router.get('/',(req,res)=>{
+router.get('/', async (req,res)=>{
+
+  
 
     eventModel.find({},function(err,events){
         res.render('participant',{
-            eventList : events
+            eventList : events,
+           
+
         })
-    })  
+    }).limit(9);  
  });
+
+
 
   // filter route
   router.post('/filter',(reg,res)=>{
     
-      //var time = reg.body.part3;
+      
 
     eventModel.find({region1: reg.body.part1,eventType1: reg.body.part2},
         function(err,events){
