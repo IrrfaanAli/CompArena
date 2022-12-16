@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CampArena</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
+    <script src="../routes/index.js"></script>
 </head>
 <body>
     
@@ -48,25 +48,25 @@
         
         
         <div class="container d-flex flex-row mb-5 mt-5" style="width:50%">
-
-        <select class="form-select form-select-sm me-4"  id="region" aria-label=".form-select-sm example ">
+    <form action="/filter" method="post" style="display: flex;">
+        <select class="form-select form-select-sm me-4" name="part1" aria-label=".form-select-sm example ">
           <option selected>Region</option>
-            <option value="1">Dhaka</option>
-            <option value="2">Barishal</option>
-            <option value="3">Rangpur</option>
-            <option value="1">Sylhet</option>
-            <option value="2">Chattogram</option>
-            <option value="3">Khulna</option>
-            <option value="2">Mymensingh</option>
-            <option value="3">Rajshahi</option>
+            <option name="Dhaka" value="Dhaka">Dhaka</option>
+            <option value="Barishal">Barishal</option>
+            <option value="Rangpur">Rangpur</option>
+            <option value="Sylhet">Sylhet</option>
+            <option value="Chattogram">Chattogram</option>
+            <option value="Khulna">Khulna</option>
+            <option value="Mymensingh">Mymensingh</option>
+            <option value="Rajshahi">Rajshahi</option>
           </select>
-          <select class="form-select form-select-sm me-4" id="type" aria-label=".form-select-sm example">
+          <select class="form-select form-select-sm me-4" name="part2" aria-label=".form-select-sm example">
             <option selected>Type</option>
-            <option value="1">Math</option>
-            <option value="2">Physics</option>
-            <option value="3">Programming </option>
-            <option value="2">Robotics </option>
-            <option value="3">Literature</option>
+            <option value="Math">Math</option>
+            <option value="Physics">Physics</option>
+            <option value="Programming">Programming </option>
+            <option value="Robotics">Robotics </option>
+            <option value="Literature">Literature</option>
           </select>
           <select class="form-select form-select-sm me-4" id="deadline" aria-label=".form-select-sm example">
             <option selected>Deadline</option>
@@ -78,9 +78,9 @@
             <option value="3">2 months</option>
             
           </select>
-          <button type="button" class="btn btn-primary" id="myButton">Explore</button>
+          <button type="submit" class="btn btn-primary"   onclick="mybutton();">Explore</button>
       </div>
-       
+    </form>
         <!-- card part start-->
 
             <div class="container d-flex flex-wrap" >
@@ -93,6 +93,10 @@
                           <h5 class="card-title"><%= event.eventName1 %></h5>
                           <p class="card-text"><%= event.eventDetails1
                             %></p>
+                            <p class="card-text" style="font-weight:bold;">Deadline: <%= event.
+                              regDeadline1
+                              
+                              %></p>
                         </div>
                       </div>
                     </div>
@@ -117,6 +121,6 @@
     </footer>
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> 
-      <script scr="../client.js"></script>
+     
 </body>
 </html>

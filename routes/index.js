@@ -1,46 +1,36 @@
 const express = require('express');
 const router = express.Router();
 const eventModel = require('../models/events');
+const bodyParser=require('body-parser'); 
 
 
 
 //Home page route
 router.get('/',(req,res)=>{
-    
+
     eventModel.find({},function(err,events){
         res.render('participant',{
             eventList : events
         })
-    })
+    })  
  });
 
-
-
-
-
-router.post('/click', (req, res) => {
-   
-  });
-        
-  router.get('/click',(req,res)=>{
-
-    if (typeof document !== "undefined") {
-        const e1 = document.getElementById("region");
-        var text1 = e1.options[e1.selectedIndex].text;
-
-    }
-     
+  // filter route
+  router.post('/filter',(reg,res)=>{
     
-   // var e2 = document.getElementById("type");
-   // var e3 = document.getElementById("deadline");
-   
+      //var time = reg.body.part3;
 
-  // const query = { region1: "Dhaka" };
-    eventModel.find({region1: 'Dhaka'},function(err,events){
+    eventModel.find({region1: reg.body.part1,eventType1: reg.body.part2},
+        function(err,events){
         res.render('participant',{
             eventList : events
         })
-    })
- });
+    }) 
+  })
+
+  router.get('/filter',(reg,res)=>{
+   
+    
+}); 
 
  module.exports = router;
