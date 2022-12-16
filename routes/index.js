@@ -26,11 +26,16 @@ router.get('/',(req,res)=>{
             eventList : events
         })
     }) 
-  })
+  });
 
   router.get('/filter',(reg,res)=>{
    
-    
+    eventModel.find({region1: reg.body.part1,eventType1: reg.body.part2},
+        function(err,events){
+        res.render('participant',{
+            eventList : events
+        })
+    }) 
 }); 
 
  module.exports = router;
