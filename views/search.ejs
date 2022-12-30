@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search result</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <%- include ('partials/header.ejs') %>
+
+
+    <p style="font-size: 23px; margin: 5% 0 0 17%; color: #747272;">Searched results</p>
+    <!-- card part start-->
+
+    <div class="container d-flex flex-wrap">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <% eventList.forEach(event=> { %>
+            <div class="col">
+              <div class="card h-100">
+  
+                <img src="<%= event.image1 %>" class=" img-thumbnail" alt="..." style=" height:250px  " />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <%= event.eventName1 %>
+                  </h5>
+                  <p class="card-text">
+                    <%= event.eventDetails1 %>
+                  </p>
+                  <p class="card-text" style="font-weight:bold;">Deadline: <%= event. regDeadline1 %>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <% }); %>
+        </div>
+  
+      </div>
+  
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampArena</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="../routes/index.js"></script>
+</head>
+
+<body>
+
+  <%- include ('partials/header2.ejs') %>
+
+
+    <div class="container d-flex flex-row mb-5 mt-5" style="width:50%; margin-left: 35%;">
+      <form action="/filter" method="get" style="display: flex;">
+        <select class="form-select form-select-sm me-4" name="regionbased" aria-label=".form-select-sm example ">
+          <option selected>Region</option>
+          <option value="Dhaka">Dhaka</option>
+          <option value="Barishal">Barishal</option>
+          <option value="Rangpur">Rangpur</option>
+          <option value="Sylhet">Sylhet</option>
+          <option value="Chittagong">Chittagong</option>
+          <option value="Khulna">Khulna</option>
+          <option value="Mymensingh">Mymensingh</option>
+          <option value="Rajshahi">Rajshahi</option>
+        </select>
+        <select class="form-select form-select-sm me-4" name="genre" aria-label=".form-select-sm example">
+          <option selected>Type</option>
+          <option value="Math">Math</option>
+          <option value="Physics">Physics</option>
+          <option value="Programming">Programming </option>
+          <option value="Robotics">Robotics </option>
+          <option value="Literature">Literature</option>
+        </select>
+        <select class="form-select form-select-sm me-4" id="deadline" aria-label=".form-select-sm example">
+          <option selected>Deadline</option>
+          <option value="1">On Going</option>
+          <option value="2">1 week</option>
+          <option value="3">10 Days</option>
+          <option value="1">15 Days</option>
+          <option value="2">30 Days</option>
+          <option value="3">2 months</option>
+
+        </select>
+        <button type="submit" class="btn btn-primary">Explore</button>
+    </div>
+    </form>
+    <!-- card part start-->
+
+    <div class="container d-flex flex-wrap">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <% eventList.forEach(event=> { %>
+          <div class="col">
+            <div class="card h-100">
+
+              <img src="<%= event.image1 %>" class=" img-thumbnail" alt="..." style=" height:250px  " />
+              <div class="card-body">
+                <h5 class="card-title">
+                  <%= event.eventName1 %>
+                </h5>
+                <form action="/event_view" method="post">
+                  <input type="hidden" name="image1" value="<%= event.image1 %>">
+                  <input type="hidden" name="eventName1" value="<%= event.eventName1 %>">
+                  <input type="hidden" name="eventType1" value="<%= event.eventType1 %>">
+                  <input type="hidden" name="eventMode1" value="<%= event.eventMode1 %>">
+                  <input type="hidden" name="eventDetails1" value="<%= event.eventDetails1 %>">
+                  <input type="hidden" name="date1" value="<%= event.date1 %>">
+                  <input type="hidden" name="regDeadline1" value="<%= event.regDeadline1 %>">
+                  <input type="hidden" name="region1" value="<%= event.region1 %>">
+                  <input type="hidden" name="eventLink1" value="<%= event.eventLink1 %>">
+                  <input type="hidden" name="organizerName1" value="<%= event.organizerName1 %>">
+                  <input type="hidden" name="organizerEmail1" value="<%= event.organizerEmail1 %>">
+
+                  <button type="submit" style="border: none; background: none; color: #B494BB;font-size: 15px;">View
+                    Event</button>
+                </form>
+
+                <p class="card-text">
+                  <%= event.eventDetails1 %>
+                </p>
+                <p class="card-text" style="font-weight:bold;">Deadline: <%= event. regDeadline1 %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <% }); %>
+      </div>
+
+    </div>
+
+
+
+    <!--footer start-->
+
+
+
+
+    <%- include ('partials/f3.ejs') %>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

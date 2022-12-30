@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!----<title> Website Layout | CodingLab</title>---->
+  <link rel="stylesheet" href="/css/new.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+  </style>
+  <title>Admin Dashboard</title>
+</head>
+
+<body style="background: url('image/bg2.jpg');">
+  <div class="main_box">
+    <input type="checkbox" id="check">
+    <div class="btn_one">
+      <label for="check">
+        <i class="fas fa-bars"></i>
+      </label>
+    </div>
+    <div class="sidebar_menu">
+      <div class="logo">
+        <a href="#">CompArena</a>
+      </div>
+      <div class="btn_two">
+        <label for="check">
+          <i class="fas fa-times"></i>
+        </label>
+      </div>
+      <div class="menu">
+        <ul>
+          <li><i class="fas fa-qrcode"></i>
+            <a href="/dashboard">Dashboard</a>
+          </li>
+          <li>
+            <i class="fas fa-link"></i>
+            <a href="/ua">User mgmt</a>
+          </li>
+          <li>
+            <i class="fas fa-stream"></i>
+            <a href="#">Host mgmt</a>
+          </li>
+          <li>
+            <i class="fas fa-calendar-week"></i>
+            <a href="/ea">Event mgmt</a>
+          </li>
+
+        </ul>
+      </div>
+      <a href="/logout">
+        <button style="border: none; font-size: 25px;margin: 800px 0 0 90px; background: none; color: white;">Log
+          out</button>
+      </a>
+    </div>
+    <div>
+      <p
+        style="margin: 2% 0 0 16%; font-size: 50px;text-shadow: 5px 4px 15px rgba(0, 0, 0, 0.2)  ; color: white; font-weight: bold;">
+        Welcome to Admin control panel</p>
+    </div>
+    <div style="border-radius: 9px;width: 1400px; height:auto; margin: 2% 0 0 16%; background-color: white; box-shadow:
+      3px 3px 5px 1px rgba(0, 0, 0, 0.2);">
+      <p style="font-size: 25px; color: #79677d; padding: 1% 0 0 3%;">Total events: <span
+          style="font-weight: bold; font-size: 35px;"><%- count1 %> </span></p>
+      <p style="font-size: 25px; color: #79677d; padding: 0 0 0 3%;">Total users: <span
+          style="font-weight: bold; font-size: 35px;"><%- count2 %> </span></p>
+
+
+    </div>
+    <p style="margin: 2% 0 0 16%; font-size: 30px; color: white; font-weight: bold;">Events</p>
+    <div
+      style="border-radius: 9px;width: 1400px; height: auto; margin: 1% 0 0 16%; background-color: white; box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.2);">
+      <table class="ui purple table">
+        <tr>
+          <th>Name</th>
+          <th>Mode</th>
+          <th>Category</th>
+          <th>Date</th>
+          <th>Region</th>
+          <th>Organizer</th>
+
+        </tr>
+
+        <% display1.forEach(function(event) { %>
+
+          <tr>
+            <td><%- event.eventName1 %></td>
+            <td><%- event.eventMode1 %></td>
+            <td><%- event.eventType1 %></td>
+            <td><%- event.date1 %></td>
+            <td><%- event.region1 %></td>
+            <td><%- event.organizerName1 %></td>
+          </tr>
+
+          <% }); %>
+
+
+      </table>
+
+    </div>
+    <a href="/ea" style="margin: 1% 0 0 79.2%;" <button class='ui violet button'>View all</a>
+    <a href="#" style="margin: 0 0 0 1%;" <button class='ui violet button'>Create</a>
+  </div>
+</body>
+
+</html>
