@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div class="profile-card">
+    <div class="card-header">
+      <!-- <div class="pic">
+        <img src="image/OIP.jpg" alt="">
+
+      </div> -->
+      <div class="name">
+        <%= user.name1 %>
+      </div>
+      <div class="desc">  
+        <% if ( user.usertype1=="host") { %>
+          <p> Host</p>
+          <%} else if ( user.usertype1=="admin") { %>
+          <p> Admin</p>
+          <%} else { %>
+          <p> Participant</p>
+          <% } %>
+        
+        <br>
+        
+        Interest:<%= user.interest1 %><br>
+        Region:<%= user.region1 %>
+        
+
+      
+      </div>
+      <input type="button" class="contact-btn" name="answer" value="Contact Me" onclick="showDiv()" />
+      <div id="welcomeDiv" style="display:none;">
+        Email:<%= user.email1 %>
+      </div>
+
+   
+    </div>
+
+    <div class="card-footer">
+
+      <button type="button" class="contact-btn"><a href="/editprofile?id=<%=user._id%>">Edit Profile</a></button><br>
+      <button type="button" class="contact-btn"><a href="/logout">Logout</a></button>
+
+
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
+<script>
+
+  function showDiv() {
+    document.getElementById('welcomeDiv').style.display = "block";
+  }
+
+</script>

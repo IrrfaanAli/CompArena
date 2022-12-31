@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/s.css">
+    <title>Update</title>
+</head>
+<body>
+    <div class="sign-up-form">
+        <img src="image/user-icon.png">
+        <h1>Update Information</h1>
+        <form action="/update" method="post">
+            <input type="hidden" name="user_id" value="<% user._id %> ">
+            <input type="name" name="name1" class="input-box" value="<%= user.name1 %>" placeholder="Name"><br>
+            <input type="email" name="email1" class="input-box" value="<%= user.email1 %>" placeholder="Email"><br>
+            
+            
+            <select name ="usertype1" class="input"  name="usertype1">
+            <option value="">Select</option>
+             <option value="host">Host</option>
+              <option value="participant">Participant</option>
+              <option value="admin">Admin</option>
+               </select>  
+        <select name ="region1" class="input"  name="region1" >
+                <option value="">Region</option>
+                 <option value="dhaka">Dhaka</option>
+                  <option value="rajshahi">Rajshahi</option>
+                  <option value="dinajpur">Dinajpur</option>
+                  <option value="barishal">Barishal</option>
+                   </select> 
+                   <select name ="interest1" class="input"  name="interest1" >
+                    <option value="">Interest</option>
+                     <option value="math">Math</option>
+                      <option value="science">Science</option>
+                      <option value="physics">Physics</option>
+                      <option value="literature">Literature</option>
+                      <option value="programming">Programming</option>
+                       </select>  <br><br>
+            
+            <br>
+            <button type="submit" class="signup-btn">Update</button>
+         
+        </form>
+        </div>
+    </body>
+    </html>
